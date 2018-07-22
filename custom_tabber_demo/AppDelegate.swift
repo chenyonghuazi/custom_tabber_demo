@@ -7,15 +7,32 @@
 //
 
 import UIKit
+import AZTabBar
+import EasyNotificationBadge
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var tabController:AZTabBarController!
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.makeKeyAndVisible()
+        
+        let customTabbarC = customTabbar()
+//        var icons = [String]()
+//        icons.append("speaker")
+//        icons.append("speaker")
+//        icons.append("speaker")
+//        icons.append("speaker")
+//        icons.append("speaker")
+//        tabController = AZTabBarController(withTabIconNames: icons)
+//        tabController.setViewController(ViewController(), atIndex: 2)
+//        tabbar.delegate = self
+        window?.rootViewController = customTabbarC
+        window?.backgroundColor = UIColor.white
         return true
     }
 
@@ -41,6 +58,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
+//    func setupButton(){
+//        var button = RoundedButton()
+//        button.isEnabled = true
+//        button.backgroundColor = .white
+//        button.translatesAutoresizingMaskIntoConstraints = false
+//        button.setImage(UIImage(named: "account"), for: [])
+//        button.tintColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+//        button.addTarget(self, action: #selector(didSelectMiddleMenu(sender:)), for: .touchUpInside)
+//        tabController.view.addSubview(button)
+//        let container = tabController.buttonsContainerView!
+//        button.topAnchor.constraint(equalTo: container.topAnchor, constant: -20).isActive = true
+//        button.heightAnchor.constraint(equalTo: container.heightAnchor, multiplier: 1.1).isActive = true
+//        button.widthAnchor.constraint(equalTo: button.heightAnchor, multiplier: 1.0).isActive = true
+//        button.centerXAnchor.constraint(equalTo: tabController.view.centerXAnchor).isActive = true
+//        container.layer.shadowOffset = CGSize(width: 0, height: -2)
+//        container.layer.shadowRadius = 10
+//        container.layer.shadowOpacity = 0.1
+//        container.layer.shadowColor = UIColor.black.cgColor
+//        tabController.animateTabChange = true
+//        tabController.tabBarHeight = 60
+//        tabController.selectionIndicatorHeight = 3
+//        tabController.selectionIndicatorColor = #colorLiteral(red: 0.9529411793, green: 0.6862745285, blue: 0.1333333403, alpha: 1)
+//    }
 }
 
